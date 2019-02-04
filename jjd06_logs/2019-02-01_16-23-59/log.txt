@@ -1,0 +1,43 @@
+
+abp14, 0, Have results/direct_inner_versus_k.pdf, FAIL
+abp14, 1, Have results/direct_outer_time_versus_p.pdf, FAIL
+abp14, 2, Have results/direct_outer_strong_scaling.pdf, FAIL
+abp14, 3, Have results/direct_outer_strong_scaling.pdf, FAIL
+abp14, 4, Have results/fast_fourier_time_vs_recursion_k.pdf, FAIL
+abp14, 5, Have results/fast_fourier_recursion_versus_iteration.pdf, FAIL
+abp14, 6, Have src/abp14/direct_fourier_transform_parfor_inner.cpp, FAIL
+abp14, 7, Have src/abp14/direct_fourier_transform_parfor_outer.cpp, FAIL
+abp14, 8, Have src/abp14/fast_fourier_transform_taskgroup.cpp, FAIL
+abp14, 9, Have src/abp14/fast_fourier_transform_parfor.cpp, FAIL
+abp14, 10, Have src/abp14/fast_fourier_transform_combined.cpp, FAIL
+abp14, 11, Have src/fourier_transform_register_factories.cpp, PASS
+Overwriting files in src directory (except for registry)
+abp14, 12, Can build test_fourier_transform, FAIL
+abp14, 13, Can build time_fourier_transform, FAIL
+abp14, 14, Checking test_fourier_transform still lists 'hpce.direct_fourier_transform', FAIL
+abp14, 15, Checking test_fourier_transform still lists 'hpce.fast_fourier_transform', FAIL
+abp14, 16, Checking test_fourier_transform now lists 'hpce.abp14.direct_fourier_transform_parfor_inner', FAIL
+abp14, 17, Checking test_fourier_transform now lists 'hpce.abp14.direct_fourier_transform_parfor_outer', FAIL
+abp14, 18, Checking test_fourier_transform now lists 'hpce.abp14.fast_fourier_transform_parfor', FAIL
+abp14, 19, Checking test_fourier_transform now lists 'hpce.abp14.fast_fourier_transform_taskgroup', FAIL
+abp14, 20, Checking test_fourier_transform now lists 'hpce.abp14.fast_fourier_transform_combined', FAIL
+abp14, 21, Checking direct_fourier_transform_parfor_inner.cpp calls parallel_for at some point., FAIL
+abp14, 22, Checking direct_fourier_transform_parfor_inner.cpp uses partitioner., FAIL
+abp14, 23, Checking direct_fourier_transform_parfor_outer.cpp calls parallel_for at some point., FAIL
+abp14, 24, Checking fast_fourier_transform_taskgroup.cpp uses task groups at some point., FAIL
+abp14, 25, Checking fast_fourier_transform_parfor.cpp uses parallel_for at some point., FAIL
+abp14, 26, Checking fast_fourier_transform_combined.cpp uses parallel_for., FAIL
+abp14, 27, Checking fast_fourier_transform_combined.cpp also uses task_group., FAIL
+abp14, 28, Testing direct_fourier_transform_parfor_inner (using external tester), every test should pass., FAIL
+abp14, 29, Testing direct_fourier_transform_parfor_outer (using external tester), every test should pass., FAIL
+abp14, 30, Testing fast_fourier_transform_taskgroup (using external tester), every test should pass., FAIL
+abp14, 31, Testing fast_fourier_transform_parfor (using external tester), every test should pass., FAIL
+abp14, 32, Testing fast_fourier_transform_combined (using external tester), every test should pass., FAIL
+abp14, 33, Timing hpce.abp14.fast_fourier_transform_taskgroup with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of NoOutput is more than 2.5., FAIL
+abp14, 34, Timing hpce.abp14.fast_fourier_transform_parfor with 4 CPUs and n=2^24: check observed parallelism (totalTime/wallTime) of NoOutput is more than 1.1., FAIL
+abp14, 35, Timing hpce.abp14.fast_fourier_transform_combined with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of NoOutput is more than 2.5., FAIL
+abp14, 36, For 4 CPUs, n=2^12, direct: check time for serial (CommandFailed) is greater than parfor (CommandFailed)., FAIL
+abp14, 37, For 4 CPUs, n=2^22, fast: check time for serial (CommandFailed) is at least 2x that of taskgroup (CommandFailed)., FAIL
+abp14, 38, For 4 CPUs, n=2^22, fast: check time for parfor (CommandFailed) is at least 1.5x that of combined (CommandFailed)., FAIL
+
+Passed 1 out of 39 tests.
