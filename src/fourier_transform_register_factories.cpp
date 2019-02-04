@@ -11,6 +11,7 @@ std::shared_ptr<fourier_transform> Create_direct_fourier_transform();
 namespace abp14{
 	std::shared_ptr<fourier_transform> Create_direct_fourier_transform_parfor_inner();
 	std::shared_ptr<fourier_transform> Create_direct_fourier_transform_parfor_outer();
+	std::shared_ptr<fourier_transform> Create_fast_fourier_transform_taskgroup();
 }
 
 void fourier_transform::RegisterDefaultFactories()
@@ -23,6 +24,8 @@ void fourier_transform::RegisterDefaultFactories()
 	// TODO : Add your factories here
 	RegisterTransformFactory("hpce.abp14.direct_fourier_transform_parfor_inner", hpce::abp14::Create_direct_fourier_transform_parfor_inner);
 	RegisterTransformFactory("hpce.abp14.direct_fourier_transform_parfor_outer", hpce::abp14::Create_direct_fourier_transform_parfor_outer);
+	RegisterTransformFactory("hpce.abp14.fast_fourier_transform_taskgroup", hpce::abp14::Create_fast_fourier_transform_taskgroup);
 }
+
 
 }; // namespace hpce
