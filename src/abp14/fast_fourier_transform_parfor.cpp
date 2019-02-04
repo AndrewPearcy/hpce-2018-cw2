@@ -61,16 +61,16 @@ protected:
 				  w = w*wn;
 			  }
 			} else {	
-				for(size_t i=0;i<m;i+=K){
-				  w=pow(wn,i);
-				  for(size_t j=0;j<K;j++){
-					  complex_t t1 = w*pOut[m+j+i];
-					  complex_t t2 = pOut[j+i]-t1;
-					  pOut[j+i] = pOut[j+i]+t1;                
-					  pOut[j+m+i] = t2;                          
+				tbb::parallel_for(tbb::blocked_range<unsigned>(0,m,K), [&](const tbb::blocked_range<unsigned> &chunk){
+    	w=pow(wn,chunk.begin());
+	for(unsigned i=chunk.begin(); i!=chunk.end(); i++){
+					  complex_t t1 = w*pOut[m+i];
+					  complex_t t2 = pOut[i]-t1;
+					  pOut[i] = pOut[i]+t1;                
+					  pOut[m+i] = t2;                          
 					  w = w*wn;
 				  }	
-				}
+				}, tbb::simple_partitioner());
 			}
 /*
 			if(m <= K) {

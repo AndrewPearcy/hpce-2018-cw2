@@ -18,8 +18,9 @@ FOURIER_IMPLEMENTATION_OBJS =  \
 	src/direct_fourier_transform.o \
 	src/abp14/direct_fourier_transform_parfor_inner.o \
 	src/abp14/direct_fourier_transform_parfor_outer.o \
-	src/abp14/fast_fourier_transform_taskgroup.o
-
+	src/abp14/fast_fourier_transform_taskgroup.o \
+	src/abp14/fast_fourier_transform_parfor.o
+	
 
 
 FOURIER_OBJS = $(FOURIER_CORE_OBJS) $(FOURIER_IMPLEMENTATION_OBJS)
