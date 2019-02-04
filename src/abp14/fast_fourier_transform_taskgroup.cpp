@@ -14,7 +14,7 @@ class fast_fourier_transform_taskgroup
 protected:
 
 	char *v = getenv("HPCE_FTT_RECURSION_K");
-	size_t grain = v==NULL : 16 ? atoi(v);
+	size_t grain = v==NULL ? 16 : atoi(v);
 	/* Standard radix-2 FFT only supports binary power lengths */
 	virtual size_t calc_padded_size(size_t n) const
 	{
@@ -66,7 +66,6 @@ protected:
 			  pOut[j] = pOut[j]+t1;                 /*  pOut[j] = pOut[j] + w^i pOut[m+j] */
 			  pOut[j+m] = t2;                          /*  pOut[j] = pOut[j] - w^i pOut[m+j] */
 			  w = w*wn;
-			}
 			}
 		}
 	}

@@ -9,7 +9,7 @@ namespace hpce
 {
 namespace abp14
 {
-class direct_fourier_transform
+class direct_fourier_transform_parfor_inner
 	: public fourier_transform
 {
 
@@ -89,7 +89,7 @@ public:
 
 std::shared_ptr<fourier_transform> Create_direct_fourier_transform_parfor_inner()
 {
-	return std::make_shared<direct_fourier_transform>();
+	return std::make_shared<direct_fourier_transform_parfor_inner>();
 }
 
 }; // namespace abp14
